@@ -1,7 +1,7 @@
 html, body {
    padding: 0 0 0 0;
    margin: 0;
-   font-family: 'Work Sans', 'Inter', sans-serif;
+   font-family: 'Work Sans', sans-serif;
 }
 
 body {
@@ -38,6 +38,7 @@ h2 {
    font-weight: 500;
    margin-bottom: 24px;
    color: #fafafa;
+   word-spacing: -5px;
 }
 
 h3 {
@@ -52,17 +53,32 @@ a {
    width: 100%;
    height: 100%;
    text-decoration: none;
+   color: #999;
+}
+
+.ext-link {
+   font-weight: 400;
+   text-decoration: underline;
+   color: #999;
+}
+
+.ext-link:hover {
+   color: #1ee3c2;
 }
 
 p {
    font-size: 1.25rem;
-   font-weight: 400;
+   font-weight: 300;
    color: #ccc;
 }
 
 .statement {
    font-size: 1.5rem;
    line-height: 2rem;
+   margin-bottom: 12px;
+}
+
+.statement:last-of-type {
    margin-bottom: 56px;
 }
 
@@ -91,3 +107,34 @@ img {
    border-radius: 4px;
    margin-bottom: 8px;
 }
+
+#back-btn-container {
+   position: relative;
+   width: 720px;
+   height: 56px;
+   margin-bottom: 16px;
+}
+
+.button {
+   font-size: 1.25rem;
+   font-weight: 600;
+   width: fit-content;
+   padding: 12px 24px;
+   border-radius: 22px;
+   background: #222;
+   transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+   color: #1ee3c2;
+   transform: scale(1.1);
+   transition: all 0.1s ease-in-out;
+}
+
+.line {
+   height: 4px;
+   width: 720px;
+   background: #222;
+   margin-bottom: 32px;
+}
+
