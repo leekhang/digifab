@@ -1,2 +1,2 @@
 # digifab
-A repository to host projects from the HCDE 598 Digital Fabrication course.
+A repository to host my projects for the HCDE 598 Digital Fabrication course.
