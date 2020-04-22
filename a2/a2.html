@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+   <title>Assignment 2</title>
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href="../style.css" media="screen" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="back-btn-container">
+      <a class="button" href="../index.html">Back</a>
+</div>
+<div class="line"></div>
+<div class="page-container">
+   <div class="header">
+      <h1>WEEK 3</h1>
+      <h2>Getting started with 3d Printing!</h2>
+   </div>
+
+   <img src="./splash.png">
+   <p class="statement">
+      In this assignment, I assembled and 3d-printed standard shapes in different print settings in Ultimaker Cura. You can access the final <code>.3dm</code> file <a class="ext-link" href="https://github.com/leekhang/digifab/tree/master/src/a2" target="_blank">here</a>.
+   </p>
+
+   <div class="body">
+      <h3>1. Assembling The 3D Printer</h3>
+      <p>
+         After receiving my package very late in the week. I started assembling the 3D printer following the provided manual and this very helpful youtube <a class="ext-lnik" href="https://www.youtube.com/watch?v=ibsOYzXduYc" target="_blank">tutorial</a>>. It took some time to level the printer since my floor was not completely flat.
+      </p>
+      <img src="./printer.jpg">
+      <p>The only mistake I made during the assembly is the bed-leveling process. I unfortunately didn't lower the bed on all four corners before moving the extruder around and resulted to a deep scratch on the print bed. However, the extruder still seems to work fine.</p>
+      
+      <h3>2. Creating The Shapes</h3>
+      <p>
+         I started by creating the basic shapes of a 2cm cube, 2cm-diameter tube, and a 2cm cylinder in Rhino and exported them as separate <code>.stl</code> files.
+      </p>
+      <img src="./rhino.png">
+      <p>
+         To ensure a faster print time, I halved the height of the cylinders to 10mm instead since there isn't a specified height.
+      </p>
+
+      <h3>3. Converting to GCode</h3>
+      <p>
+         With the shapes exported, I then imported them into Ultimaker Cura to adjust my print settings.
+      </p>
+      <img src="curacube.png">
+      <p>
+         Upon slicing, the gcode is then saved to an SD card which is transfered to the printer for printing.
+      </p>
+
+      <h3>3. Checking The Results</h3>
+      <h4>Cubes</h4>
+      <p>
+         The image below shows the first 3 tasks of printing 2cm cubes at low (left), standard (mid), and high quality (right) which took about 16 minutes, 30 minutes, and 53 minutes respectively.
+      </p>
+      <img src="qualcubes.jpg">
+      <p>
+         As you can see from the prints, especially on the brims, the lines get thinner and finer as you move towards the higher quality print. However, the difference between standard and super quality is as distinguishable as the difference between low and standard. The resulting caliper measurements in width x length x height are <code>20.16mm x 19.80mm x 19.63mm</code>, <code>19.89mm x 19.83mm x 19.68mm</code>, and <code>19.99mm x 20.01mm x 19.57mm</code> respectively. In terms of the length and width, this suggests that  potentially an improvement of print accuracy as the print quality is increased. However, for the height, some calibration may be done on cura to improve its accuracy.
+      </p>
+
+      <h4>Tubes</h4>
+      <p>
+         I initially tried to print the tubes by only creating an extruded curve on Rhino. This didn't work since Cura automatically capped the design on slicing and the print became a flat disk instead.
+      </p>
+      <p>
+         To correct this, I redesigned the tube on Rhino with a 0.1cm offset and exported that to <code>.stl</code>.
+      </p>
+
+      <h4>Cylinders</h4>
+      <p>The cylinder with the 0.1cm tolerance (left) printed in 23 minutes with the resulting dimensions in diameter x height: <code>19.90mm x 9.84mm</code>. On the other hand, the cylinder with 0.005cm tolerance (right) printed in 15 minutes with the dimensions <code>19.98mm x 9.70mm</code>.
+      </p>
+      <img src="cyls.png">
+
+      <h4>Cube with a Hole</h4>
+      <p>Unfortunately, I wasn't able to get to this task due to time constraints.</p>
+   </div>
+   
+
+   
+</div>
+<div class="line"></div>
+</body>
+
+</html>
