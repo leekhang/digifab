@@ -61,13 +61,18 @@
       <p>
          As you can see from the prints, especially on the brims, the lines get thinner and finer as you move towards the higher quality print. However, the difference between standard and super quality is as distinguishable as the difference between low and standard. The resulting caliper measurements in width x length x height are <code>20.16mm x 19.80mm x 19.63mm</code>, <code>19.89mm x 19.83mm x 19.68mm</code>, and <code>19.99mm x 20.01mm x 19.57mm</code> respectively. In terms of the length and width, this suggests that  potentially an improvement of print accuracy as the print quality is increased. However, for the height, some calibration may be done on cura to improve its accuracy.
       </p>
+      <p>
+         For the 2cm cube with concentric circles at the top and bottom, it took about 32 minutes to print with the dimensions <code>20.07mm x 19.92mm x 19.77mm</code>.
+      </p>
+      <img src="conccube.jpg">
 
       <h4>Tubes</h4>
       <p>
          I initially tried to print the tubes by only creating an extruded curve on Rhino. This didn't work since Cura automatically capped the design on slicing and the print became a flat disk instead.
       </p>
+      <img src="failedtube.jpg">
       <p>
-         To correct this, I redesigned the tube on Rhino with a 0.1cm offset and exported that to <code>.stl</code>.
+         To correct this, I redesigned the tube on Rhino with a 0.1cm offset and exported that to <code>.stl</code> but that still didn't work. I wasn't able to get it right in time but I will try to increase the wall thickness on Rhino and see if that changes anything.
       </p>
 
       <h4>Cylinders</h4>
