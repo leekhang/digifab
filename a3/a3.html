@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+   <title>Assignment 3</title>
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href="../style.css" media="screen" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="back-btn-container">
+      <a class="button" href="../index.html">Back</a>
+</div>
+<div class="line"></div>
+<div class="page-container">
+
+   <div class="header">
+      <h1>WEEK 4</h1>
+      <h2>Getting started with Grasshopper!</h2>
+   </div>
+
+   <img src="./splash.png">
+
+   <p class="statement">
+      In this assignment, I designed a parameterized clipper and a nested structure using Grasshopper. You can access the final <code>.gh</code> file <a class="ext-link" href="https://github.com/leekhang/digifab/tree/master/src/a3" target="_blank">here</a>.
+   </p>
+
+   <div class="body">
+
+      <!-- --------------------------------- -->
+
+      <h3>Task 1: Making a Construction Kit</h3>
+
+      <img src="./c_sketch.jpg">
+      <p>I started this task by quickly sketching out what I wanted for this kit. I landed on the idea of a 90º clip to create a <code>10cm x 10cm x 10cm</code> cube out of cardboard.</p>
+      
+      <h4>Creating The Shape</h4>
+      <img src="./c_creatingshape.png">
+      <p>To create the shape in Grasshopper, I started by creating the outer rectangle and the inner cutout rectangle using the thickness of the cardboard as the parameter. I then moved the inner cutout to the right position and used the <code>Region Difference</code> module to cut out the inner rectangle from the outer shape.</p>
+
+      <h4>Filleting Corners</h4>
+      <p> To create a more usable clipper, I wanted to make sure that the inner cutout had rounded corners so that it can be inserted into a cardboard more smoothly. This took a lot of trial and error, but the resulting process I used to acquire rounded corners was to first explode the closed curve into individual open curves.</p>
+      <img src="./c_explode.png">
+      <p> I then indexed into the list of open curves to figure out which curve pertained to which section of the shape, joined them together, and filleted them accordingly.</p>
+      <img src="./c_filleting.png">
+      <p> To convert the shape back to a closed curve, I then merge the lists of open curves together, flatten the tree, and used the <code>join</code> module to connect them together. </p>
+
+      <h4>Transforming The Extrusion</h4>
+      <p>With the shape formed, I extrude it by 2cm and created a duplicate that is overlaps the base at 90 degrees through a series of rotates and moves. Since the move would depend on the thickness of the cardboard, I used the parameter as a input to a series of arithmetic calculations which then feeds into the <code>move</code> module. The two resulting shapes are then unioned into a single object.</p>
+      <img src="./c_transforming.png">
+
+      <h4>Creating a Box Array</h4>
+      <p>
+         Finally, I used the box array module to create multiples of the clipper and baked them into Rhino. I then exported the clippers into an <code>.stl</code> format and imported it into Cura.
+      </p>
+      <img src="./c_boxarray.png">
+      
+      <h4>Printing The Clippers</h4>
+      <p>
+         I started the initial print with a skirt and low quality setting to speed up the printing process. Unfortunately, since the objects were small and relatively thin, they did not adhere to the bed very well.
+      </p>
+      <img src="./c_skirt.jpg">
+      <p>
+         I stopped the print halfway through and re-sliced the objects with a brim setting instead and the prints turned out a lot better.
+      </p>
+      <img src="./c_brim.jpg">
+
+      <h4>Results</h4>
+      <p>
+         The resulting cube was surprisingly sturdy. Some of the clips were tighter than usual since I couldn't fully clean out the brims in time.
+      </p>
+      <img src="./c_completebox.jpg">
+      <p>
+         It also passed the shaking test! I even dropped it on the floor several times at height of 3 feet and everything was still intact.
+      </p>
+      <img src="./c_test.gif">
+      
+      
+      <!-- --------------------------------- -->
+
+      <h3>Task 2: Making Nested Objects</h3>
+
+      <img src="./n_rings.png">
+      <p>I started this project by creating the 2D rings following Jasper's tutorial.</p>
+      
+      <h4>Varying the height</h4>
+      <p>To nest the shapes within each other, I needed to vary the height of each of the cylinderical objects. To do this, I fed the extrusion module a list of heights and grafted the list to match the level of hierarchy from the list of rings.</p>
+      <img src="./n_extrusion.png">
+
+      <h4>Creating The Caps</h4>
+      <p>To cover each of the cylinders at their respective heights, I first extruded the surfaces by a fixed amount, then used the list of heights created from before to move each of the caps.</p>
+      <img src="./n_caps.png">
+
+      <h4>Capping The Cylinders</h4>
+      <p>At the end of the Grasshopper sequence, I merged the cylinders and the caps into a single tree and used the <code>solid union</code> function to merge them into 3 objects.</p>
+      <img src="./n_union.png">
+      <p>The shapes are then baked and exported into <code>.stl</code> format. The screenshot below shows the bottom perspective view of the nested object in Rhino.</p>
+      <img src="./n_stl.png">
+
+      <h4>Printing The Object</h4>
+      <p>To ensure that structure can sustain during print, I added supports in the print setting. I iniitally also added the brim setting to ensure plate adhesion, but the resulting print was extremely hard to separate with the brim merging the bottom of all three objects.</p>
+      <img src="./n_brim.jpg">
+      <p>To solve this issue, I changed the plate adhesion back to skirt. THe resulting print is shown below.</p> 
+      <img src="./n_brim.jpg">
+   </div>
+   
+</div>
+
+<div class="line"></div>
+
+</body>
+
+</html>

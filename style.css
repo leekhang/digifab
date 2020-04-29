@@ -46,7 +46,7 @@ h2 {
 h3 {
    font-size: 1.75rem;
    font-weight: 600;
-   margin-top: 40px;
+   margin-top: 56px;
    margin-bottom: 16px;
    color: #fafafa;
    transition: all 0.1s ease-in-out;
@@ -57,7 +57,7 @@ h4 {
    line-height: 2rem;
    font-weight: 500;
    color: #fafafa;
-   margin-top: 16px;
+   margin-top: 32px;
    margin-bottom: 4px;
 }
 
@@ -126,6 +126,10 @@ p {
    padding: 30px 36px 30px 36px;
    transition: all 0.1s ease-in-out;
    margin-bottom: 56px;
+}
+
+.assignment a h3 {
+   margin-top: 0;
 }
 
 .assignment:hover {
