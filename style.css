@@ -144,7 +144,7 @@ p {
    transition: all 0.1s ease-in-out;
 }
 
-img {
+img, video {
    width: 100%;
    border-radius: 4px;
    margin-bottom: 8px;
@@ -171,6 +171,11 @@ img {
    color: #1ee3c2;
    transform: scale(1.1);
    transition: all 0.1s ease-in-out;
+}
+
+.bg {
+   /* background: white; */
+   mix-blend-mode: multiply;
 }
 
 .line {

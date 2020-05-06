@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+   <title>Assignment 4</title>
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href="../style.css" media="screen" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="back-btn-container">
+      <a class="button" href="../index.html">Back</a>
+</div>
+<div class="line"></div>
+<div class="page-container">
+
+   <div class="header">
+      <h1>WEEK 5</h1>
+      <h2>Getting started with Grasshopper!</h2>
+   </div>
+
+   <img src="./splash.png">
+
+   <p class="statement">
+      In this assignment, I created a single printable model by merging two meshes together and started working on my lamp design for next week's assignment. You can get my <code>.3dm</code> files <a class="ext-link" href="https://github.com/leekhang/digifab/tree/master/src/a4" target="_blank">here</a>.
+   </p>
+
+   <div class="body">
+
+      <!-- --------------------------------- -->
+
+      <h3>Task 1: Meshing Things</h3>
+
+      <h4>Initial Idea</h4>
+      
+      <p>My initial plan for this assignment is to create a model that visualizes the technologies a smartphone has replaced of the past decade. You can imagine this being an iPhone at the front of a model and right behind it is an explosion of different devices like books, old phones, clocks, cameras, television, etc. morphed into a single gigantic structure.</p>
+      
+      <p>I started tackling this idea by finding all the available 3D models that I wanted. I jumped into Rhino to work on the most important model — the iPhone</p>
+      
+      <img src="./m_iPhone.png">
+      
+      <p>To my dismay, the iPhone, like many of the other 3D models, was composed of numerous meshes and many of them did not line up with one another, making it a huge pain to work with.</p>
+      
+      <video width="100%" controls preload autoplay loop muted>
+         <source src="./m_jointest.mp4" type="video/mp4">
+      </video>
+      
+      <p>After a full day of working on this, I decided to scrap the idea in the interest of time, and try something much simpler instead.</p>
+
+      <h4>Pivoting To A Different Idea</h4>
+      
+      <p>The other idea that I came up with was to create a cute little figure of a cat-dog. I was able to find the low-poly aesthetic models that I was looking for and imported them into Rhino.</p>
+      
+      <p>Upon scaling and rotating them into the right position, I created a plane for each model and used <code>MeshBooleanSplit</code> to split the models.</p>
+      
+      <img src="./m_splitting.png">
+      
+      <p>The dog shape did not split very well so I had to clean up some vector points and use <code>FillMeshHole</code> to cover any open ends. I then put them adjacent to each other and attempted to match the two closed meshes together.</p>
+      
+      <img src="./m_matching.png">
+      
+      <p>This took a little while because it was very hard to select the right points on the meshes and move them without accidentally opening the mesh.</p>
+
+      <img src="./m_matching.gif">
+      
+      <p>After matching the two shapes together, I then joined them together and exported it as a single <code>.stl</code> file with no errors/warnings.</p>
+
+      <img src="./m_finalstl.png">
+
+      <p>To ensure that the model did not have any outstanding errors for printing, I imported the model into Cura as an inspection and the software was able to slice the model with no miscalculations.</p>
+
+      <img src="./m_cura.png">
+
+      <p>The resulting print, as you can see, was also quite successful.</p>
+
+      <img src="./m_print.jpg">
+
+      <p>Upon a close inspection though, you can see distortions between where the cat and dog is merged.</p>
+
+      <img src="./m_seam.jpg">
+      
+      <!-- --------------------------------- -->
+
+      <h3>Task 2: Lamp Design</h3>
+
+      <p>For this part of the assignment, I really wanted to create a lamp that is based on something mathematical. So I focused my time this week on researching different theorems and how others have attempted to visualize them.</p>
+
+      <p>After looking at a lot of math tutorials and illustrations (while trying to rejog my scrappy Math-mory), I came up with several ideas for my lamp shade.</p>
+
+      <h4>Idea 1: Prime Numbers</h4>
+
+      <p> I stumbled upon a <a href="https://www.youtube.com/watch?v=EK32jo7i5LQ" class="ext-link"></a> that visualized prime numbers using a polar plot it the result was absolutely beautiful. There was also an interesting trend where the plot will turn from a spiral pattern to a ray pattern as the prime numbers get larger (as shown in the images below). I think it would be amazing to see if I can turn the "random" nature of this prime polar plot into a lamp shade.</p>
+
+      <img src="./primespirals.png">
+
+      <img src="./primelines.png">
+
+      <h4>Idea 2: Riemann Zeta Function</h4>
+
+      <p>Riemann's Zeta Function can create beautiful plots when you input complex numbers. Here's an introductory <a href="https://www.youtube.com/watch?v=sD0NjbwqlYw" class="ext-link">video</a> about it if you're interested.</p>
+
+      <p>It would be very cool if I am able to extend the Zeta function into some form 3D object, like this <a href="http://tmajlath.byethost13.com/Riemann.html?ckattempt=1&i=1" class="ext-link">post</a> and this parametric plot I found online.</p>
+
+      <img src="./riemann.png">
+
+      <h4>Idea 3: Fermat's Last Theorem</h4>
+
+      <p>I much more simplistic idea I had was simply creating shapes based on the equation in Fermat's Last Theorem. By increasing the powers in even numbers I can create a lamp made of layers that morph from a circular cone to a pyramid. A simulation of the equations is shown below:</p>
+
+      <img src="./fermat.png" class="bg">
+
+
+   </div>
+   
+</div>
+
+<div class="line"></div>
+
+</body>
+
+</html>
