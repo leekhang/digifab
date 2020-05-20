@@ -97,6 +97,10 @@ p {
    margin-bottom: 16px;
 }
 
+b {
+   font-weight: 550;
+}
+
 .caption {
    font-size: 1.25rem;
    line-height: 1.5;
