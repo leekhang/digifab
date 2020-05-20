@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+   <title>Assignment 6</title>
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href="../style.css" media="screen" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="back-btn-container">
+      <a class="button" href="../index.html">Back</a>
+</div>
+<div class="line"></div>
+<div class="page-container">
+
+   <div class="header">
+      <h1>WEEK 7</h1>
+      <h2>Molding & Casting Pt 2!</h2>
+   </div>
+
+   <img src="./1cast.jpg">
+
+   <p class="statement">
+      In this assignment, I created a mold and cast for a truncated icosahedron. You can get my <code>.3dm</code> files <a class="ext-link" href="https://github.com/leekhang/digifab/tree/master/src/a5" target="_blank">here</a>. Also, BIG thanks to Victor Allen for making this assignment possible!
+   </p>
+
+   <div class="body">
+
+      <!-- --------------------------------- -->
+
+      <h3>Creating The Super Mold</h3>
+      
+      <p>I started creating the super mold by attempting to cut the polyhedrons in two parts. However many of the shapes downloaded from Thingiverse where meshes that didn't cut well at all. I started with a simple split using a flat surface which didn't cut the shape in the right way.</p>
+
+      <img src="./failcut2.png" alt="">
+
+      <p>I then attempted to create a complex parting line but couldn't figure out the right way to merge the resulting shape to cut the mesh in time. Meshes are just messy.</p>
+
+      <img src="./failcut1.png" alt="">
+
+      <p>After some web surfing, I found a Rhino plugin called <a href="https://www.food4rhino.com/app/rhinopolyhedra" class="ext-link">RhinoPolyhedra</a> that exports many different polyhedras that are easier to manage.</p>
+
+      <img src="./polyhedra.png" alt="">
+
+      <p>With the actual shape figured out, the rest of the super mold, including the sprues and keys, was then pretty easy to make.</p>
+
+      <img src="./firstmd.png" alt="">
+
+      <p>Due to a mishap with making the mold (discussed later on), I optimized the super mold by thinning the walls and shortening the height to reduce print time.</p>
+
+      <img src="./optimmd.png" alt="">
+
+
+      <h3>Making The Mold</h3>
+
+      <p>Once the print is complete, I started revisiting the lecture videos to recall the instructions for using the Oomoo chemicals. Things started looking funny when the color of my mixture was white instead of purple. And right when I started pouring the mixture onto my mold, the mixture hardened into a rigid hard structure.</p>
+
+      <img src="./smoothcast.jpg" alt="">
+
+      <p>After consulting the packaging, turns out Amazon shipped me Smooth Cast instead of Oomoo, but stuck an Oommoo barcode sticker over it which is why it was wrongly shipped. Thanks Amazon!</p>
+
+      <p>As an alternative, I tried making the mold with ice, but it was very hard to remove it from the super mold without damaging the both the mold and the super mold.</p>
+
+      <img src="./watermold.jpg">
+
+      <p>After posting on Q&A Slack Channel, Victor generously offered to drop off his unused Oomoo. I coordinated with him on the drop off and jumped onto making the mold again.</p>
+
+      <img src="./moldingprocess.jpg" alt="">
+      
+      <p>I left the mixture to sit in the super mold overnight. The result was a lot better than Smooth Cast for sure!</p>
+
+      <img src="./mold.jpg" alt="">
+
+      <h3>Casting The Shapes</h3>
+
+      <p>Since I was running out of time, I decided to eyeball the plaster and water ratio and poured it slowly into the mold. It turned out that that the inner opening of my sprue was too narrow which caused a congestion when the mixture is too viscuous. This led me to think that the mold was filled when in actuality it was half-filled.</p>
+
+      <img src="./halfcast.jpg" alt="">
+
+      <p>To solve this problem, I used a cutting knife to widen the inner opening. And the results were pretty great!</p>
+
+      <img src="./4casts.jpg" alt="">
+
+
+   </div>
+   
+</div>
+
+<div class="line"></div>
+
+</body>
+
+</html>

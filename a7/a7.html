@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+   <title>Assignment 7</title>
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href="../style.css" media="screen" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="back-btn-container">
+      <a class="button" href="../index.html">Back</a>
+</div>
+<div class="line"></div>
+<div class="page-container">
+
+   <div class="header">
+      <h1>WEEK 7</h1>
+      <h2>My Final Project Plan</h2>
+   </div>
+
+   <img src="./splash.png">
+
+   <p class="statement">
+      In this assignment, I provide an overview and projected timeline for my final project.
+   </p>
+
+   <div class="body">
+
+      <!-- --------------------------------- -->
+
+      <h3>Task 1: Lamps The Sequel</h3>
+
+      <h4>1. The Final Idea</h4>
+      
+      <p>With many potential ideas from the previous week and none of them being easy, I decided to simply test them out in grasshopper.</p>
+      
+      <p>I started tackling the Riemann Zeta function by writing a script that is then outputted into a csv file. But without a deep understand in how the function truly works, it was very hard to actually to play with the function in such a way that outputs a 3-Dimensional shape.</p>
+
+      <img src="./zeta.png">
+
+      <p>Moving onto the prime number idea, I realized it was hard to map the spiral patterns onto a small cylindrical shape, hence I decided to limit the idea into mapping prime numbers to a set number of angles in a row and a set number of rows in a cylinder. If an angle within a row is a prime number, we then puncture the cylinder with a hole.</p>
+
+      <img src="./sketch.jpg" alt="">
+
+      <h4>2. Using GHPython</h4>
+
+      <p>After implementing the basic shapes in Grasshopper including the main cylindrical lamp shade and thin cylinder poles that are used to create holes on the lamp shade (through BooleanDifference).</p>
+
+      <img src="./basics.png" alt="">
+         
+      <p>I started looking into how I can process a given file of prime numbers into a usable list of numbers. After days of trial and error, I realized the best way to do this was to write a Python script.</p>
+
+      <p>This was one of the two most challenging part of the project because I had to get familiar with how Grasshopper handles Python scripts and the Grasshopper API as well. The final code is shown below:</p>
+
+      <img src="./pyscript.png">
+
+      <p>The brief overview of the code works is that the script imports a file with a list of prime numbers, takes in the number of numbers we have per row (e.g 1-36, 37-64,... or 1-10,11-20,...) and the number of rows we want to have, and creates a tree object containing the resulting angles for each row. The <code>list_to_tree</code> function was copied from this very helpful <a href="https://chen.works/posts/python-list-datatree/" class="ext-link">blog</a>. The final Grasshopper sequence is shown below and the resulting data tree is shown in the rightmost panel.</p>
+
+      <img src="./pygroup.png">
+
+      <h4>3. Rotating The Cylinders</h4>
+      
+      <p>The 2nd hardest part of this project was to figure out how to actually use the giant list of lists in other modules. The solution I came up with was using a function called <code>ExplodeTree</code> which splits up the data tree into individual lists. This can then be inputted into the Rotate module along with the list of duplicated cylinders to rotate each cylinder on each row to the correct angle.</p>
+
+      <img src="./holepunchers.png" alt="">
+
+      <p>This solution, however, is not scalable since <code>ExplodeTree</code> is not variable and requires you to manually connect / remove wires if you were to adjust the number of rows.</p>
+
+      <p>A vertical pole is create to unionize the rows of cylinders into a single closed polysurface. Note that the rows are also pushed upwards to account for the length of the screw contact on the lamp.</p>
+
+      <img src="./treeshape.png" alt="">
+
+      <p>Then, I used the <code>BooleanDifference</code> function to cut out the holes from the lamp shape.</p>
+
+      <img src="./lampshade.png" alt="">
+
+      <h4>4. Don't Forget To Connect</h4>
+
+      <p>To actually attach the lamp shade to the lamp innereds, I took use of the holes provided on the lamp innereds. I started by measuring the dimensions of the holes and well as the AC plug. This took some trial and error to figure out the best fitting for the holes and the innereds overall.</p>
+
+      <img src="./connects.jpg" alt="">
+
+      <img src="./fconnect.jpg" alt="">
+
+      <h4>5. Bringing It All Together</h4>
+
+      <p>With all the parts done, I simply baked the lamp shade and <code>BooleanUnion</code> the entire thing together as a single <code>.stl</code> file!</p>
+
+      <img src="./cura.png" alt="">
+
+      <p>Here's the final print!</p>
+
+      <img src="./final.g" alt="">
+
+      <!-- --------------------------------- -->
+
+      <h3>Task 2: Cast & Mold Design</h3>
+
+      <img src="https://images.squarespace-cdn.com/content/v1/5251a929e4b062435b67a1d7/1486963217808-LLFX1KXGHIE9BJUI7OOC/ke17ZwdGBToddI8pDm48kHQ5JQOXRPiZvdD5RzmXVWpZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxV0sJaAGJtit1KP0ilhL_7SXtllNbzQlpLNeMnqt8daPmJqkwcZETjbLC2XEjGeSE/BLOCK_ANIM_SMALL_2.gif?format=750w" alt="">
+
+      <p>Inspired by the Swedish design studio <a href="http://www.playtestmake.com/" class="ext-link">PLAY TEST MAKE</a>'s various work on casted cement. I wanted to create a mini wall made up of repeating polyhedrons.</p>
+
+      <p>Currently I'm still messing around with pattern of the wall by playing with different kinds of polyhedron.</p>
+
+      <img src="./shapes.png">
+
+   </div>
+   
+</div>
+
+<div class="line"></div>
+
+</body>
+
+</html>
