@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+   <title>Final Project</title>
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href="../style.css" media="screen" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="back-btn-container">
+      <a class="button" href="../index.html">Back</a>
+</div>
+<div class="line"></div>
+<div class="page-container">
+
+   <div class="header">
+      <h1>WEEK 8</h1>
+      <h2>My Final Project</h2>
+   </div>
+
+   <img src="./sketch.jpg">
+
+   <p class="statement">
+      In this assignment, I go through the process of fabricating a messaging user interface.
+   </p>
+
+   <div class="body">
+
+      <h3>2D Design</h3>
+
+      <p>As mentioned from my project plan, I wanted to create a 3D representation of a screen-based user interface. I started by digitizing the potential interfaces I wanted on Figma.</p>
+
+      <img src="./figma.png" alt="">
+
+      <p>Starting with the messaging app, I imported the design into Illustrator (Figma doen't export SVGs well) to ensure the vectors are in the right format and then brought it into Rhino as an SVG.</p>
+
+      <img src="./svgimport.png" alt="">
+
+      <h3>3D Design</h3>
+
+      <p>Using the SVGs, I then started experimenting with different shapes that each of the UI component.</p>
+
+      <img src="./iterations.jpg" alt="">
+
+      <p>I also had to ensure that the stl files are exporting correctly by importing them into Cura. The one thing that took time to figure out was the design of the chat bubbles because they didn't export well into Cura. It took some trial and error on working around different commands in Rhino to get the result right.</p>
+
+      <img src="./export.png" alt="">
+
+      <h3>3D Printing</h3>
+
+      <p>The initial plan was to create the components using plaster, but plaster requires a lot more steps including mold designing, mold making, and casting. As an alternative, I decided to try printing everything in white filament.
+      
+      <p>In terms of the finishing, I experimented with XTC-3D which gave a glossy finish that I didn't like. So I decided to sand them down to a smooth surface, and finish it with spray paint.</p>
+
+      <p>Switching to white filament took an unexpected turn when the extrusions just don't play well with my current setup. This led to a lot of bed adhesion problems and ugly prints.</p>
+
+      <img src="./printfails.png" alt="">
+
+      <img src="./uglyplate.jpg" alt="">
+
+      <p>Additionally, the extrusion maintained some of the previous filament color, creating an occasional grey patch on my print. After playing around with the initial layer print speed, bed temperature, and multiple prints to remove the remaining black filament, the problems were fixed.</p>
+
+      <h3>Joining Pieces Together</h3>
+
+      <p>Moving to 3D printing instead of molding and casting made it easier to imagine how to accurately connect the pieces together. The quickest way I did to match the pieces to the base plate is by cutting a dent into each of the pieces and their position on the base plate, and connecting them together by an extruded shape of the dent.</p>
+
+      <img src="./avatarbtn.png" alt="">
+
+      <img src="./baseplate.png" alt="">
+
+      <img src="./connectors.png" alt="">
+
+      <h3>The Finishing</h3>
+
+      <p>After getting all the parts printed, I started sanding the parts with a 400 grit sandpaper.</p>
+
+      <img src="./finalparts.jpg" alt="">
+
+      <p>I then took the parts outside and sprayed the parts with a Paint & Filler.</p>
+
+      <img src="./spraypaint.jpg" alt="">
+
+      <p>After the paint dried, I then used super glue to connect the components to their connectors before snapping them onto the board.</p>
+
+      <img src="./glue1.jpg" alt="">
+
+      <img src="./glue2.jpg" alt="">
+
+      <p>And the final result looked kinda cool!</p>
+
+      <p>Given more time, I think I would experiement with using primer and filler spray with my sanding to create an even smoother surface before spray painting the print. I would also experiment with more color since I'm not a huge fan of the red-orange profile icons.</p>
+
+   </div>
+   
+</div>
+
+<div class="line"></div>
+
+</body>
+
+</html>
